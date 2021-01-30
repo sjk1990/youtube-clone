@@ -23,6 +23,7 @@ class Youtube {
       params: {
         part: "snippet",
         maxResults: 25,
+        q: query,
         type: "video",
       },
     });
