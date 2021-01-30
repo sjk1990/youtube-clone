@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./app.module.css";
 import VideoList from "../src/component/video_list/vidoe_list";
 import SearchHeader from "./component/search_header/search_header";
@@ -12,17 +12,20 @@ function App({ youtube }) {
     setSelectedVideo(video);
   };
 
-  const search = (query) => {
-    youtube.search(query).then((items) => {
-      setVideos(items);
-      setSelectedVideo(null);
-    });
-  };
+  const search = useCallback(
+    (query) => {
+      youtube.search(query).then((items) => {
+        setVideos(items);
+        setSelectedVideo(null);
+      });
+    },
+    [youtube]
+  );
 
   //componentDidMount + componentDidUpdate , option [] : only react when Mount
   useEffect(() => {
     youtube.mostPopular().then((result) => setVideos(result.items));
-  }, []);
+  }, [youtube]);
 
   return (
     <div className={styles.app}>
