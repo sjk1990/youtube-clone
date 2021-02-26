@@ -1,6 +1,6 @@
 # Youtube-Clone
 
-Cloning Youtube with Vanilla and NodeJS
+Cloning Youtube Front-end Page Using Youtube API
 
 ## About The Project
 [Project URL](https://sjk1990.github.io/youtube-clone/)
