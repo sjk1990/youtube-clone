@@ -5,6 +5,9 @@
   background-color: black;
   color: white;
 }
+.title {
+  margin-left: 0.5em;
+}
 
 .logo {
   display: flex;
